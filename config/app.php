@@ -144,6 +144,7 @@ return [
 		'Avatar\Providers\ConfigServiceProvider',
 		'Avatar\Providers\EventServiceProvider',
 		'Avatar\Providers\RouteServiceProvider',
+		'b3nl\MWBModel\ServiceProvider'
 
 	],
 

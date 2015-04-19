@@ -5,11 +5,11 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*"
+		"laravel/framework": "5.0.*",
+		"michelf/php-markdown": "~1.5"
 	},
 	"require-dev": {
 		"b3nl/laravel-mwb-model": "dev-master",
-		"laravel/homestead": "~2.0",
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1"
 	},

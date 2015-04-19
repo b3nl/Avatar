@@ -2,5 +2,7 @@
 .idea/*
 !.idea/encodings.xml
 !.idea/vcs.xml
+.vagrant
+composer.phar
 /vendor
 /node_modules
