@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: Avatar
-        psr4_prefix: Avatar
-        src_path: app
