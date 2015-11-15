@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Avatar\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

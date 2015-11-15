@@ -140,11 +140,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Avatar\Providers\AppServiceProvider::class,
+        Avatar\Providers\AuthServiceProvider::class,
+        Avatar\Providers\EventServiceProvider::class,
+        Avatar\Providers\RouteServiceProvider::class,
 
+        b3nl\MWBModel\ServiceProvider::class
     ],
 
     /*
