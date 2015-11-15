@@ -4,30 +4,30 @@ namespace Avatar;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Language extends Model
 {
-    use \Illuminate\Database\Eloquent\SoftDeletes;
+    
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
      */
-    protected $dates = ['deleted_at', 'created_at', 'updated_at'];
+    protected $dates = [];
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['email', 'name', 'password', 'remember_token'];
+    protected $fillable = ['name'];
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'languages';
 
     /**
      * Getter for contents.
@@ -45,14 +45,5 @@ class User extends Model
     public function categories()
     {
         return $this->hasMany('Avatar\Category');
-    } // function
-
-    /**
-     * Getter for tags.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function tags()
-    {
-        return $this->hasMany('Avatar\Tag');
     } // function
 }
