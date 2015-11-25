@@ -30,7 +30,7 @@ class StoreRequest extends Request
     {
         return array (
         'tag' => 'required|string|unique:tags,tag',
-        'user_id' => 'required|exists:users,id',
+        'user_id' => 'required|integer|exists:users,id',
         );
     } // function
 }

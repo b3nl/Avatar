@@ -1,16 +1,16 @@
 <?php
-namespace Avatar\Http\Requests\API\Tag;
+namespace Avatar\Http\Requests\API\Category;
 
 use Avatar\Http\Requests\Request;
 
 /**
- * Request class updateing the entitiy.
+ * Request class storing the entitiy.
  * @category Requests
  * @package Avatar
  * @subpackage Http
  * @version $id$
  */
-class UpdateRequest extends Request
+class StoreRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,8 +29,12 @@ class UpdateRequest extends Request
     public function rules()
     {
         return array (
-        'tag' => 'string|unique:tags,tag',
-        'user_id' => 'integer|exists:users,id',
+        'language_id' => 'required|integer|exists:languages,id',
+        'user_id' => 'required|integer|exists:users,id',
+        'alias' => 'string|unique:categories,alias',
+        'select' => 'string',
+        'sort' => 'integer',
+        'title' => 'required|string',
         );
     } // function
 }

@@ -29,8 +29,7 @@ class UpdateRequest extends Request
     public function rules()
     {
         return array (
-        'tag' => 'string|unique:content_types,name',
-        'user_id' => 'exists:users,id',
+        'name' => 'string|unique:content_types,name',
         );
     } // function
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Avatar\Http\Requests\API\Tag;
+namespace Avatar\Http\Requests\API\Language;
 
 use Avatar\Http\Requests\Request;
 
@@ -29,8 +29,7 @@ class UpdateRequest extends Request
     public function rules()
     {
         return array (
-        'tag' => 'string|unique:tags,tag',
-        'user_id' => 'integer|exists:users,id',
+        'name' => 'string|unique:languages,name',
         );
     } // function
 }
