@@ -1,12 +1,15 @@
 {
+    "minimum-stability": "dev",
     "name": "laravel/laravel",
+    "prefer-stable": false,
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "laravel/framework": "5.1.*",
+        "b3nl/laravel-rest-scaffolding": "dev-master"
     },
     "require-dev": {
         "b3nl/laravel-mwb-model": "dev-master",

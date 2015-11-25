@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     /*
@@ -145,7 +144,8 @@ return [
         Avatar\Providers\EventServiceProvider::class,
         Avatar\Providers\RouteServiceProvider::class,
 
-        b3nl\MWBModel\ServiceProvider::class
+        b3nl\MWBModel\ServiceProvider::class,
+        b3nl\RESTScaffolding\ServiceProvider::class
     ],
 
     /*
