@@ -20,7 +20,7 @@ class Tag extends Model
      *
      * @var array
      */
-    protected $fillable = ['tag', 'user_id'];
+    protected $fillable = ['tag', 'user_id', 'language_id'];
 
     /**
      * The database table used by the model.
@@ -36,6 +36,15 @@ class Tag extends Model
     public function user()
     {
         return $this->belongsTo('Avatar\User', 'user_id');
+    } // function
+
+    /**
+     * Getter for languages.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function language()
+    {
+        return $this->belongsTo('Avatar\Language', 'language_id');
     } // function
 
     /**

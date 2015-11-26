@@ -46,4 +46,13 @@ class Language extends Model
     {
         return $this->hasMany('Avatar\Category');
     } // function
+
+    /**
+     * Getter for tags.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tags()
+    {
+        return $this->hasMany('Avatar\Tag');
+    } // function
 }

@@ -20,7 +20,7 @@ class ContentType extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'class'];
 
     /**
      * The database table used by the model.

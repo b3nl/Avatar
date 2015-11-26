@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLanguagesTable extends Migration
+class CreatePasswordResetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email', 255)->index();
+            $table->string('token', 255)->index();
+            $table->string('created_at')->default('0000-00-00 00:00:00');
+
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('languages');
+        Schema::drop('password_resets');
     }
 }

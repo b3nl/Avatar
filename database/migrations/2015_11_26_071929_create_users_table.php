@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,15 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tag', 255);
+            $table->tinyInteger('is_admin', false, false)->default('0');
+            $table->string('email', 255)->unique();
+            $table->string('name', 255);
+            $table->string('password', 60);
+            $table->string('remember_token', 100)->nullable();
             $table->softDeletes('deleted_at')->nullable();
-            $table->integer('user_id', false, true);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('no action')->onUpdate('no action');
+
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tags');
+        Schema::drop('users');
     }
 }
