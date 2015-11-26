@@ -16,8 +16,6 @@ class CreatePasswordResetsTable extends Migration
             $table->string('email', 255)->index();
             $table->string('token', 255)->index();
             $table->string('created_at')->default('0000-00-00 00:00:00');
-
-            $table->timestamps();
         });
     }
 
