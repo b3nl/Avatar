@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/b3nl/laravel-rest-scaffolding.git",
-                "reference": "4d5a572ca29f957f8ee788ca32d79362d52b68e8"
+                "reference": "63ff67434c7bedcc2027de7da1e08a2cac24cdba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/b3nl/laravel-rest-scaffolding/zipball/4d5a572ca29f957f8ee788ca32d79362d52b68e8",
-                "reference": "4d5a572ca29f957f8ee788ca32d79362d52b68e8",
+                "url": "https://api.github.com/repos/b3nl/laravel-rest-scaffolding/zipball/63ff67434c7bedcc2027de7da1e08a2cac24cdba",
+                "reference": "63ff67434c7bedcc2027de7da1e08a2cac24cdba",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "laravel",
                 "rest"
             ],
-            "time": "2015-11-25 21:21:19"
+            "time": "2015-11-26 07:27:05"
         },
         {
             "name": "classpreloader/classpreloader",

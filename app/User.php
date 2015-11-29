@@ -26,7 +26,7 @@ class User extends Model
      *
      * @var array
      */
-    protected $fillable = ['email', 'name', 'password', 'remember_token'];
+    protected $fillable = ['is_admin', 'email', 'name', 'password', 'remember_token'];
 
     /**
      * The database table used by the model.

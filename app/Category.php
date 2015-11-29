@@ -20,7 +20,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['language_id', 'user_id', 'alias', 'select', 'sort', 'title'];
+    protected $fillable = ['language_id', 'user_id', 'alias', 'left', 'select', 'right', 'title'];
 
     /**
      * The database table used by the model.

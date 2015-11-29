@@ -20,7 +20,7 @@ class Content extends Model
      *
      * @var array
      */
-    protected $fillable = ['alias', 'display_date', 'is_draft', 'is_public', 'publish_date', 'user_id', 'language_id', 'content_type_id'];
+    protected $fillable = ['content_type_id', 'language_id', 'user_id', 'alias', 'display_date', 'is_draft', 'is_public', 'is_stackable', 'left', 'options', 'publish_date', 'right', 'values'];
 
     /**
      * The database table used by the model.
@@ -30,12 +30,12 @@ class Content extends Model
     protected $table = 'contents';
 
     /**
-     * Getter for users.
+     * Getter for content_types.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function contentType()
     {
-        return $this->belongsTo('Avatar\User', 'user_id');
+        return $this->belongsTo('Avatar\ContentType', 'content_type_id');
     } // function
 
     /**
@@ -48,12 +48,12 @@ class Content extends Model
     } // function
 
     /**
-     * Getter for content_types.
+     * Getter for users.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function contenttype()
+    public function user()
     {
-        return $this->belongsTo('Avatar\ContentType', 'content_type_id');
+        return $this->belongsTo('Avatar\User', 'user_id');
     } // function
 
     /**

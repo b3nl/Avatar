@@ -16,9 +16,10 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->integer('language_id', false, true);
             $table->integer('user_id', false, true);
-            $table->string('alias', 255);
+            $table->string('alias', 255)->nullable();
+            $table->mediumInteger('left', false, false)->default('1');
             $table->text('select');
-            $table->mediumInteger('sort', false, false)->default('0');
+            $table->mediumInteger('right', false, false)->default('2');
             $table->string('title', 255)->nullable();
             $table->softDeletes('deleted_at')->nullable();
             $table->unique(['language_id', 'alias']);
