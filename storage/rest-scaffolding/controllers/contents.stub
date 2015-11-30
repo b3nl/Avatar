@@ -1,33 +1,33 @@
 <?php
-namespace Avatar\Http\Controllers\API;
+namespace {appNamespace}\Http\Controllers\{customNamespace};
 
 use Avatar\ContentType\Factory;
-use Avatar\Http\Requests\API\Content\StoreRequest;
-use Avatar\Http\Requests\API\Content\UpdateRequest;
-use Avatar\Http\Requests;
-use Avatar\Http\Controllers\Controller;
+use {appNamespace}\Http\Requests\{customNamespace}\{entityClass}\StoreRequest;
+use {appNamespace}\Http\Requests\{customNamespace}\{entityClass}\UpdateRequest;
+use {appNamespace}\Http\Requests;
+use {appNamespace}\Http\Controllers\Controller;
 use b3nl\RESTScaffolding\Http\Controllers\PaginationTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Avatar\Content;
+{customUsages}
 
 /**
  * The basic controller for table api requests.
  * @category Controllers
- * @package Avatar
+ * @package {appNamespace}
  * @subpackage Http
  * @version $id$
  */
-class ContentsController extends Controller
+class {tableNamespace}Controller extends Controller
 {
     use PaginationTrait;
 
     /**
      * Deletes the given row.
-     * @param Content $entity
-     * @return Content
+     * @param {entityClass} $entity
+     * @return {entityClass}
      */
-    public function destroy(Content $entity)
+    public function destroy({entityClass} $entity)
     {
         $entity->delete();
 
@@ -40,15 +40,15 @@ class ContentsController extends Controller
      */
     protected function getListClassName()
     {
-        return Content::class;
+        return {entityClass}::class;
     } // function
 
     /**
      * Returns the entity.
-     * @param Content $entity
-     * @return Content
+     * @param {entityClass} $entity
+     * @return {entityClass}
      */
-    public function show(Content $entity)
+    public function show({entityClass} $entity)
     {
         return $entity;
     } // function
@@ -56,7 +56,7 @@ class ContentsController extends Controller
     /**
      * Saves the entity.
      * @param StoreRequest $request
-     * @return Content
+     * @return {entityClass}
      */
     public function store(StoreRequest $request)
     {
@@ -66,16 +66,16 @@ class ContentsController extends Controller
             $this->validate($request, $validationRules);
         } // if
 
-        return Content::create($request->all());
+        return {entityClass}::create($request->all());
     } // function
 
     /**
      * Updates the entity.
      * @param UpdateRequest $request
-     * @param Content $entity
-     * @return Content
+     * @param {entityClass} $entity
+     * @return {entityClass}
      */
-    public function update(UpdateRequest $request, Content $entity)
+    public function update(UpdateRequest $request, {entityClass} $entity)
     {
         $adapter = app(Factory::class)->getAdapter($request->get('content_type_id') ?: $entity->content_type_id);
 

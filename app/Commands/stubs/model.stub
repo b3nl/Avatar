@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use Avatar\Model;
+
+class DummyClass extends Model
+{
+    //
+}

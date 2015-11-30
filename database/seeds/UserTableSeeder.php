@@ -10,6 +10,7 @@
 
             User::create([
                 'email' => 'foo@bar.com',
+                'is_admin' => true,
                 'name'  => 'b3nl',
                 'password' => Hash::make('root')
             ]);

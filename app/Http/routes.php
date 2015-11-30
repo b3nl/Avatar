@@ -1,4 +1,5 @@
 <?php
+use Avatar\Content;
 use Avatar\Language;
 use Avatar\Category;
 use Avatar\Tag;

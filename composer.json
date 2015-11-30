@@ -9,10 +9,11 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "b3nl/laravel-rest-scaffolding": "dev-master"
+        "b3nl/avatar-content-type-html": "dev-master"
     },
     "require-dev": {
         "b3nl/laravel-mwb-model": "dev-master",
+        "b3nl/laravel-rest-scaffolding": "dev-master",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",

@@ -2,7 +2,7 @@
 
 namespace Avatar;
 
-use Illuminate\Database\Eloquent\Model;
+use Avatar\Model;
 
 class Tag extends Model
 {

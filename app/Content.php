@@ -2,11 +2,17 @@
 
 namespace Avatar;
 
-use Illuminate\Database\Eloquent\Model;
+use Avatar\Model;
 
 class Content extends Model
 {
     use \Illuminate\Database\Eloquent\SoftDeletes;
+
+    /**
+     * Which values should be casted?
+     * @var array
+     */
+    protected $casts = [];
 
     /**
      * The attributes that should be mutated to dates.
@@ -20,7 +26,7 @@ class Content extends Model
      *
      * @var array
      */
-    protected $fillable = ['content_type_id', 'language_id', 'user_id', 'alias', 'display_date', 'is_draft', 'is_public', 'is_stackable', 'left', 'options', 'publish_date', 'right', 'values'];
+    protected $fillable = ['content_type_id', 'language_id', 'parent_id', 'user_id', 'alias', 'display_date', 'is_draft', 'is_public', 'is_stackable', 'left', 'options', 'publish_date', 'right'];
 
     /**
      * The database table used by the model.
@@ -33,9 +39,10 @@ class Content extends Model
      * Getter for content_types.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function contentType()
+    public function contenttype()
     {
         return $this->belongsTo('Avatar\ContentType', 'content_type_id');
+
     } // function
 
     /**
@@ -45,6 +52,17 @@ class Content extends Model
     public function language()
     {
         return $this->belongsTo('Avatar\Language', 'language_id');
+
+    } // function
+
+    /**
+     * Getter for contents.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function content()
+    {
+        return $this->belongsTo('Avatar\Content', 'parent_id');
+
     } // function
 
     /**
@@ -54,6 +72,7 @@ class Content extends Model
     public function user()
     {
         return $this->belongsTo('Avatar\User', 'user_id');
+
     } // function
 
     /**
@@ -63,6 +82,7 @@ class Content extends Model
     public function categories()
     {
         return $this->belongsToMany('Avatar\Category');
+
     } // function
 
     /**
@@ -72,5 +92,16 @@ class Content extends Model
     public function tags()
     {
         return $this->belongsToMany('Avatar\Tag');
+
+    } // function
+
+    /**
+     * Getter for contents.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function contents()
+    {
+        return $this->hasMany('Avatar\Content');
+
     } // function
 }

@@ -2,12 +2,10 @@
 
 namespace Avatar;
 
-use Illuminate\Database\Eloquent\Model;
+use Avatar\Model;
 
 class ContentType extends Model
 {
-    
-
     /**
      * The attributes that should be mutated to dates.
      *

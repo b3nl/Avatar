@@ -140,12 +140,14 @@ return [
          * Application Service Providers...
          */
         Avatar\Providers\AppServiceProvider::class,
+        Avatar\Providers\ArtisanServiceProvider::class,
         Avatar\Providers\AuthServiceProvider::class,
         Avatar\Providers\EventServiceProvider::class,
         Avatar\Providers\RouteServiceProvider::class,
 
         b3nl\MWBModel\ServiceProvider::class,
-        b3nl\RESTScaffolding\ServiceProvider::class
+        b3nl\RESTScaffolding\ServiceProvider::class,
+        b3nl\Avatar\ContentType\HTML\Providers\ServiceProvider::class,
     ],
 
     /*

@@ -29,14 +29,14 @@ class StoreRequest extends Request
     public function rules()
     {
         return [
-        'alias' => 'string|unique:contents,alias',
-        'content_type_id' => 'required|integer|exists:content_types,id',
-        'language_id' => 'required|integer|exists:languages,id',
-        'user_id' => 'required|integer|exists:users,id',
-        'display_date' => 'date',
-        'is_draft' => 'boolean',
-        'is_public' => 'boolean',
-        'publish_date' => 'date'
+            'alias' => 'string|unique:contents,alias',
+            'content_type_id' => 'required|integer|exists:content_types,id',
+            'language_id' => 'required|integer|exists:languages,id',
+            'user_id' => 'required|integer|exists:users,id',
+            'display_date' => 'date',
+            'is_draft' => 'boolean',
+            'is_public' => 'boolean',
+            'publish_date' => 'date'
         ];
     } // function
 }

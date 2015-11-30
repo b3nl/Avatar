@@ -5,6 +5,6 @@
 # be run after the Homestead machine is provisioned.
 cd /vagrant/
 curl -sS https://getcomposer.org/installer | php
-php composer.phar update --no-ansi --no-interaction --no-progress --no-scripts --optimize-autoloader
+php composer.phar install --no-ansi --no-interaction --no-progress --no-scripts --optimize-autoloader
 php artisan migrate
 php artisan db:seed
