@@ -28,8 +28,11 @@ class UpdateRequest extends Request
      */
     public function rules()
     {
-        return array (
-        'name' => 'string|unique:content_types,name',
-        );
+        $entity = $this->route('content_types');
+
+        return [
+        'class' => 'string|class_exists',
+        'name' => "string|unique:content_types,name,{$entity->id},id"
+        ];
     } // function
 }

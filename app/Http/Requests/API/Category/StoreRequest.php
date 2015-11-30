@@ -28,13 +28,13 @@ class StoreRequest extends Request
      */
     public function rules()
     {
-        return array (
+        return [
         'language_id' => 'required|integer|exists:languages,id',
         'user_id' => 'required|integer|exists:users,id',
         'alias' => 'string|unique:categories,alias',
         'select' => 'string',
         'sort' => 'integer',
-        'title' => 'required|string',
-        );
+        'title' => 'required|string'
+        ];
     } // function
 }

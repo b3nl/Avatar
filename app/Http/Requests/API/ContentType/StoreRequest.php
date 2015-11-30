@@ -28,8 +28,9 @@ class StoreRequest extends Request
      */
     public function rules()
     {
-        return array (
-        'name' => 'required|string|unique:content_types,name',
-        );
+        return [
+        'class' => 'required|string|class_exists',
+        'name' => 'required|string|unique:content_types,name'
+        ];
     } // function
 }

@@ -28,8 +28,8 @@ class StoreRequest extends Request
      */
     public function rules()
     {
-        return array (
-        'name' => 'required|string|unique:languages,name',
-        );
+        return [
+        'name' => 'required|string|unique:languages,name'
+        ];
     } // function
 }

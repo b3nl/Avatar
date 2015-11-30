@@ -28,8 +28,10 @@ class UpdateRequest extends Request
      */
     public function rules()
     {
-        return array (
-        'name' => 'string|unique:languages,name',
-        );
+        $entity = $this->route('languages');
+
+        return [
+        'name' => 'string|unique:languages,name'
+        ];
     } // function
 }

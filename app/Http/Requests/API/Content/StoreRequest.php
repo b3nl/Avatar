@@ -28,7 +28,7 @@ class StoreRequest extends Request
      */
     public function rules()
     {
-        return array (
+        return [
         'alias' => 'string|unique:contents,alias',
         'content_type_id' => 'required|integer|exists:content_types,id',
         'language_id' => 'required|integer|exists:languages,id',
@@ -36,7 +36,7 @@ class StoreRequest extends Request
         'display_date' => 'date',
         'is_draft' => 'boolean',
         'is_public' => 'boolean',
-        'publish_date' => 'date',
-        );
+        'publish_date' => 'date'
+        ];
     } // function
 }

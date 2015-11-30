@@ -28,13 +28,15 @@ class UpdateRequest extends Request
      */
     public function rules()
     {
-        return array (
+        $entity = $this->route('categories');
+
+        return [
         'language_id' => 'integer|exists:languages,id',
         'user_id' => 'integer|exists:users,id',
         'alias' => 'string|unique:categories,alias',
         'select' => 'string',
         'sort' => 'integer',
-        'title' => 'string',
-        );
+        'title' => 'string'
+        ];
     } // function
 }

@@ -28,9 +28,9 @@ class StoreRequest extends Request
      */
     public function rules()
     {
-        return array (
+        return [
         'tag' => 'required|string|unique:tags,tag',
-        'user_id' => 'required|integer|exists:users,id',
-        );
+        'user_id' => 'required|integer|exists:users,id'
+        ];
     } // function
 }

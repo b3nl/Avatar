@@ -28,9 +28,11 @@ class UpdateRequest extends Request
      */
     public function rules()
     {
-        return array (
+        $entity = $this->route('tags');
+
+        return [
         'tag' => 'string|unique:tags,tag',
-        'user_id' => 'integer|exists:users,id',
-        );
+        'user_id' => 'integer|exists:users,id'
+        ];
     } // function
 }

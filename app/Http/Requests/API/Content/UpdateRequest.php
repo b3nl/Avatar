@@ -28,7 +28,10 @@ class UpdateRequest extends Request
      */
     public function rules()
     {
-        return array (
-        );
+        $entity = $this->route('contents');
+
+        return [
+
+        ];
     } // function
 }
