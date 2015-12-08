@@ -58,7 +58,9 @@ class TagsController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        return Tag::create($request->all());
+        $savedEntity = Tag::create($request->all());
+
+        return Tag::find($savedEntity->id);
     } // function
 
     /**

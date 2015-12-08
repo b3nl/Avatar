@@ -58,7 +58,9 @@ class ContentTypesController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        return ContentType::create($request->all());
+        $savedEntity = ContentType::create($request->all());
+
+        return ContentType::find($savedEntity->id);
     } // function
 
     /**

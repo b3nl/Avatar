@@ -58,7 +58,9 @@ class LanguagesController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        return Language::create($request->all());
+        $savedEntity = Language::create($request->all());
+
+        return Language::find($savedEntity->id);
     } // function
 
     /**

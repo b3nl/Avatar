@@ -66,7 +66,10 @@ class ContentsController extends Controller
             $this->validate($request, $validationRules);
         } // if
 
-        return Content::create($request->all());
+        // this would only return the inserted attributes without the default ones.
+        $savedEntity = Content::create($request->all());
+
+        return Content::find($savedEntity->id);
     } // function
 
     /**

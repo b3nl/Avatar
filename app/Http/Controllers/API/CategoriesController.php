@@ -58,7 +58,10 @@ class CategoriesController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        return Category::create($request->all());
+        // this would only return the inserted attributes without the default ones.
+        $savedEntity = Category::create($request->all());
+
+        return Category::find($savedEntity->id);
     } // function
 
     /**
