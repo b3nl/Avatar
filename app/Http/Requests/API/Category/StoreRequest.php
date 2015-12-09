@@ -28,11 +28,13 @@ class StoreRequest extends Request
      */
     public function rules()
     {
+        $entity = $this->route('categories');
+
         return [
         'language_id' => 'required|integer|exists:languages,id',
         'parent_id' => 'integer|exists:categories,id',
         'user_id' => 'required|integer|exists:users,id',
-        'alias' => 'string|unique:categories,alias',
+        'alias' => "string|unique:categories,alias,NULL,id,language_id,1",
         'select' => 'string',
         'sort' => 'integer',
         'title' => 'required|string'

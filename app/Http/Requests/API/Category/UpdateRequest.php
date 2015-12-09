@@ -34,7 +34,7 @@ class UpdateRequest extends Request
         'language_id' => 'integer|exists:languages,id',
         'parent_id' => 'integer|exists:categories,id',
         'user_id' => 'integer|exists:users,id',
-        'alias' => 'string|unique:categories,alias',
+        'alias' => "string|unique:categories,alias,{$entity->id},id,language_id,{$entity->language_id}",
         'select' => 'string',
         'sort' => 'integer',
         'title' => 'string'
