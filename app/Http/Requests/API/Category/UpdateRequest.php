@@ -32,6 +32,7 @@ class UpdateRequest extends Request
 
         return [
         'language_id' => 'integer|exists:languages,id',
+        'parent_id' => 'integer|exists:categories,id',
         'user_id' => 'integer|exists:users,id',
         'alias' => 'string|unique:categories,alias',
         'select' => 'string',

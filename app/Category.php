@@ -20,7 +20,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['language_id', 'user_id', 'alias', 'left', 'select', 'right', 'title'];
+    protected $fillable = ['language_id', 'parent_id', 'user_id', 'alias', 'left', 'select', 'right', 'title'];
 
     /**
      * The database table used by the model.
@@ -30,12 +30,30 @@ class Category extends Model
     protected $table = 'categories';
 
     /**
+     * Returns the child categories for this category.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function children()
+    {
+        return $this->hasMany('Avatar\Category', 'parent_id', 'id');
+    } // function
+
+    /**
      * Getter for languages.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function language()
     {
         return $this->belongsTo('Avatar\Language', 'language_id');
+    } // function
+
+    /**
+     * Getter for the parent table.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function parent()
+    {
+        return $this->belongsTo('Avatar\Category', 'parent_id');
     } // function
 
     /**

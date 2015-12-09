@@ -30,6 +30,7 @@ class StoreRequest extends Request
     {
         return [
         'language_id' => 'required|integer|exists:languages,id',
+        'parent_id' => 'integer|exists:categories,id',
         'user_id' => 'required|integer|exists:users,id',
         'alias' => 'string|unique:categories,alias',
         'select' => 'string',

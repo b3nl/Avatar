@@ -5,6 +5,7 @@ return [
         'validators' => [
             'store' => [
                 'language_id' => 'required|integer|exists:languages,id',
+                'parent_id' => 'integer|exists:categories,id',
                 'user_id' => 'required|integer|exists:users,id',
                 'alias' => 'string|unique:categories,alias',
                 'select' => 'string',
@@ -13,6 +14,7 @@ return [
             ],
             'update' => [
                 'language_id' => 'integer|exists:languages,id',
+                'parent_id' => 'integer|exists:categories,id',
                 'user_id' => 'integer|exists:users,id',
                 'alias' => 'string|unique:categories,alias',
                 'select' => 'string',
