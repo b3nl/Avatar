@@ -9,6 +9,12 @@ class Category extends Model
     use \Illuminate\Database\Eloquent\SoftDeletes;
 
     /**
+     * Which values should be casted?
+     * @var array
+     */
+    protected $casts = [];
+
+    /**
      * The attributes that should be mutated to dates.
      *
      * @var array
@@ -30,15 +36,6 @@ class Category extends Model
     protected $table = 'categories';
 
     /**
-     * Returns the child categories for this category.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function children()
-    {
-        return $this->hasMany('Avatar\Category', 'parent_id', 'id');
-    } // function
-
-    /**
      * Getter for languages.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -48,7 +45,7 @@ class Category extends Model
     } // function
 
     /**
-     * Getter for the parent table.
+     * Getter for the parent category.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function parent()
@@ -72,5 +69,14 @@ class Category extends Model
     public function contents()
     {
         return $this->belongsToMany('Avatar\Content');
+    } // function
+
+    /**
+     * Getter for categories.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function children()
+    {
+        return $this->hasMany('Avatar\Category', 'id', 'parent_id');
     } // function
 }
