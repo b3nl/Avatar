@@ -22,6 +22,12 @@ class Model extends BaseModel implements ModelInterface
     protected $getMutators = [];
 
     /**
+     * User exposed observable events.
+     * @var array
+     */
+    protected $observables = ['constucted', 'constructing'];
+
+    /**
      * Create a new Eloquent model instance.
      * @param  array $attributes
      */
