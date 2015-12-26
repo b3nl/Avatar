@@ -2,8 +2,10 @@
 
 namespace Avatar\Providers;
 
+use Avatar\Category;
+use Avatar\Category\Observer as CategoryObserver;
 use Avatar\Content;
-use Avatar\Content\Observer;
+use Avatar\Content\Observer as ContentObserver;
 use Avatar\ContentType\Factory;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
@@ -47,7 +49,8 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function registerEvents()
     {
-        Content::observe($this->app->make(Observer::class));
+        Category::observe($this->app->make(CategoryObserver::class));
+        Content::observe($this->app->make(ContentObserver::class));
 
         return $this;
     } // function
